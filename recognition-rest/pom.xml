@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>recognition-rest</artifactId>
+    <packaging>war</packaging>
 
     <properties>
         <spring.version>4.2.4.RELEASE</spring.version>
@@ -234,7 +235,7 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jetty.version}</version>
                 <configuration>
-                    <jettyConfig>${project.basedir}/src/main/resources/config/jetty9.xml</jettyConfig>
+                    <jettyConfig>${project.basedir}/src/main/resources/jetty/jetty9.xml</jettyConfig>
                     <stopKey>STOP</stopKey>
                     <stopPort>9999</stopPort>
                     <stopWait>5</stopWait>
@@ -243,7 +244,7 @@
                         <scanTarget>${project.basedir}/src/main</scanTarget>
                         <scanTarget>${project.basedir}/src/test</scanTarget>
                     </scanTargets>
-                    <contextXml>${project.basedir}/src/test/resources/jetty-context.xml</contextXml>
+                    <contextXml>${project.basedir}/src/test/resources/jetty/context.xml</contextXml>
                     <webAppConfig>
                         <contextPath>/${project.name}</contextPath>
                     </webAppConfig>

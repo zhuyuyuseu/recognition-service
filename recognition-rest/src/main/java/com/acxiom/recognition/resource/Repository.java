@@ -9,10 +9,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.acxiom.recognition.entity.RepositoryEntity;
 import org.apache.commons.beanutils.BeanUtils;
 
 /**
- * Podcast resource placeholder for json/xml representation
+ * Repository resource placeholder for json/xml representation
  *
  * @author ama
  */
@@ -24,21 +25,21 @@ public class Repository implements Serializable {
     private static final long serialVersionUID = -8039686696076337053L;
 
     /**
-     * id of the podcast
+     * id of the repository
      */
     @XmlElement(name = "id")
     private Long id;
 
     /**
-     * title of the podcast
+     * repository name
      */
-    @XmlElement(name = "content")
-    private String content;
+    @XmlElement(name = "name")
+    private String name;
 
 
-    public Question(QuestionEntity questionEntity) {
+    public Repository(RepositoryEntity repositoryEntity) {
         try {
-            BeanUtils.copyProperties(this, questionEntity);
+            BeanUtils.copyProperties(this, repositoryEntity);
         } catch (IllegalAccessException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -48,7 +49,7 @@ public class Repository implements Serializable {
         }
     }
 
-    public Question() {
+    public Repository() {
     }
 
     public Long getId() {
@@ -59,11 +60,11 @@ public class Repository implements Serializable {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getName() {
+        return name;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setName(String name) {
+        this.name = name;
     }
 }
